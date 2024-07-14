@@ -28,16 +28,16 @@ if(!opendir("fileroot")){
 <body>
     <?php
     $pwd = file_get_contents("pwd.txt");
-    file_put_contents("recent.txt", $pwd . " $ " . $_POST['command'] . "<br/>", FILE_APPEND);
+    $commands = explode(" ", $_POST['command']);
+    file_put_contents("recent.txt", $pwd . " $ " . $commands[0] . "<br/>", FILE_APPEND);
     $output_str = file_get_contents("recent.txt");
     echo $output_str;
-    $commands = explode(" ", $_POST['command']);
-    if ($_POST['command'] == NULL) {
+    if ($commands[0] == NULL) {
         echo "<script>window.scrollTo(0,document.body.scrollHeight)</script>";
         exit(0);
-    } else if ($_POST['command'] == "pwd") {
+    } else if ($commands[0] == "pwd") {
         file_put_contents("recent.txt", $pwd . "<br/>", FILE_APPEND);
-    } else if ($_POST['command'] == "clear") {
+    } else if ($commands[0] == "clear") {
         file_put_contents("recent.txt", "");
     } else if ($commands[0] == "help") {
         $help = file_get_contents("static/terminal.php/help.txt");
