@@ -1,0 +1,5 @@
+cd - changes the working directory<br/>
+if the directory doesn't exist or the directory is a file, it will throw an error<br/>
+if no directory is specified, it will change the working directory to the previous directory<br/>
+if the directory is a relative path, it will change the working directory to the relative path from the current directory<br/>
+if the directory is an absolute path, it will change the working directory to the absolute path<br/>
