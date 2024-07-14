@@ -7,15 +7,22 @@ if (file_get_contents("recent.txt") == NULL) {
 if (file_get_contents("pwd.txt") == NULL) {
     file_put_contents("pwd.txt", "/");
 }
+if(!opendir("fileroot")){
+    if(!mkdir("fileroot")){
+        echo "Error creating directory.No permissions?";
+        exit(0);
+    }
+}
 ?>
 <html>
 
 <head>
-    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="static/terminal.php/style.css" as="style" />
     <meta charset="UTF-8" />
-    <!-- <meta http-equiv="refresh" content="2"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>frame</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="static/terminal.php/style.css" />
 </head>
 
 <body>
@@ -24,14 +31,23 @@ if (file_get_contents("pwd.txt") == NULL) {
     file_put_contents("recent.txt", $pwd . " $ " . $_POST['command'] . "<br/>", FILE_APPEND);
     $output_str = file_get_contents("recent.txt");
     echo $output_str;
+    $commands = explode(" ", $_POST['command']);
     if ($_POST['command'] == NULL) {
         echo "<script>window.scrollTo(0,document.body.scrollHeight)</script>";
         exit(0);
+    } else if ($_POST['command'] == "pwd") {
+        file_put_contents("recent.txt", $pwd . "<br/>", FILE_APPEND);
     } else if ($_POST['command'] == "clear") {
         file_put_contents("recent.txt", "");
-    } else if ($_POST['command'] == "help") {
-        $help = file_get_contents("help.txt");
-        file_put_contents("recent.txt", $help, FILE_APPEND);
+    } else if ($commands[0] == "help") {
+        $help = file_get_contents("static/terminal.php/help.txt");
+        if (sizeof($commands) == 1) {
+            file_put_contents("recent.txt", $help, FILE_APPEND);
+        } else if (sizeof($commands) == 2 && file_get_contents("static/help/$commands[1].txt") != NULL) {
+            file_put_contents("recent.txt", file_get_contents("static/help/$commands[1].txt"), FILE_APPEND);
+        } else {
+            file_put_contents("recent.txt", "Unknown command.<br/>", FILE_APPEND);
+        }
     } else {
         file_put_contents("recent.txt", "Unknown command.<br/>", FILE_APPEND);
     }

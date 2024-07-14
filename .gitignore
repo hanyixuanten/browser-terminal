@@ -1,4 +1,7 @@
 *.test.md
-pwd.txt
+/pwd.txt
 recent.txt
 .vscode
+tmp.txt
+/fileroot/*
+/fileroot

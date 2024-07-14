@@ -1,2 +1,0 @@
-clear - clears the screen<br/>
-help - displays this help message<br/>
