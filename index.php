@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="static\jquery-3.5.1.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -20,7 +20,7 @@
         window.onresize = function() {
             changeFrameHeight();
         }
-        document.onkeydown = function(e) { //对整个页面监听  
+        document.onkeydown = function(e) {
             var keyNum = window.event ? e.keyCode : e.which; 
             if (keyNum == 13) {
                 document.getElementById("fm").submit();
