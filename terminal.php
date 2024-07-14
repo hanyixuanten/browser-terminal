@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    $output_str = "Welcome to the terminal!<br/>Type 'help' to see a list of commands.<br/><br/><br/><br/><br/><br/>1";
+    $output_str = "Welcome to the terminal!<br/>Type 'help' to see a list of commands.<br/>";
     echo $output_str;
     ?>
 </body>
