@@ -1,13 +1,13 @@
 # README
 
-## 浏览器终端
+## browser terminal
 
-### 安装方法
+### install method
 
-#### 1.环境：nginx或apache+php或带有php的虚拟空间
+#### 1.environment：nginx or apache with php
 
-#### 2.进入[此页](https://github.com/hanyixuanten/indexpage/releases) 下载最新版本Source code(zip/tar.gz)
+#### 2.download the latest release from [this page](https://github.com/hanyixuanten/indexpage/releases)
 
-#### 3.解压到你的nginx，apache或虚拟空间目录
+#### 3. extract the zip file and put it in the root directory of your web server
 
-#### 4.访问index.html即可开始使用
+#### 4. open the browser and enter the address of your web server, you can see the terminal interface
