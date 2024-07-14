@@ -7,8 +7,8 @@ if (file_get_contents("recent.txt") == NULL) {
 if (file_get_contents("pwd.txt") == NULL) {
     file_put_contents("pwd.txt", "/");
 }
-if(!opendir("fileroot")){
-    if(!mkdir("fileroot")){
+if (!opendir("fileroot")) {
+    if (!mkdir("fileroot")) {
         echo "Error creating directory.No permissions?";
         exit(0);
     }
@@ -29,7 +29,7 @@ if(!opendir("fileroot")){
     <?php
     $pwd = file_get_contents("pwd.txt");
     $commands = explode(" ", $_POST['command']);
-    file_put_contents("recent.txt", $pwd . " $ " . $commands[0] . "<br/>", FILE_APPEND);
+    file_put_contents("recent.txt", $pwd . " $ " . $_POST['command'] . "<br/>", FILE_APPEND);
     $output_str = file_get_contents("recent.txt");
     echo $output_str;
     if ($commands[0] == NULL) {
@@ -37,6 +37,14 @@ if(!opendir("fileroot")){
         exit(0);
     } else if ($commands[0] == "pwd") {
         file_put_contents("recent.txt", $pwd . "<br/>", FILE_APPEND);
+    } else if ($commands[0] == "mkdir" && sizeof($commands) == 2) {
+        if (!opendir("fileroot/".$commands[1])) {
+            if (!mkdir("fileroot/".$commands[1])) {
+                file_put_contents("recent.txt", "Error creating directory.No permissions?<br/>", FILE_APPEND);
+            }
+        } else {
+            file_put_contents("recent.txt", "Directory already exists.<br/>", FILE_APPEND);
+        }
     } else if ($commands[0] == "clear") {
         file_put_contents("recent.txt", "");
     } else if ($commands[0] == "help") {

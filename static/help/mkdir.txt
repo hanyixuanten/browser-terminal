@@ -1,0 +1,2 @@
+mkdir - creates a new directory<br/>
+if the directory already exists, an error is returned<br/>
