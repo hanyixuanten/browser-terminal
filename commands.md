@@ -8,4 +8,5 @@
 - pwd - shows the working directory
 - rm - deletes a file or directory
 - touch - creates a new file
-- type help [command] in the terminal to show more details
+
+**Try to do type help [command] in the terminal to show more details**
