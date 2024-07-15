@@ -1,0 +1,4 @@
+cat - displays the contents of a file<br/>
+if the file doesn't exist, it will throw an error<br/>
+usage: cat [filename]<br/>
+example: cat file.txt<br/>

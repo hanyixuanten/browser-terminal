@@ -1,1 +1,2 @@
 clear - clears the screen<br/>
+usage: clear<br/>

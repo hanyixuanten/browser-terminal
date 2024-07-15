@@ -1,2 +1,4 @@
 mkdir - creates a new directory<br/>
 if the directory already exists, an error is returned<br/>
+usage: mkdir [name]<br/>
+example: mkdir dir<br/>

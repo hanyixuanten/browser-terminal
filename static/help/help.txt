@@ -1,2 +1,4 @@
 help - displays the help message<br/>
 help [command] displays the help message for a specific command<br/>
+usage: help/help [command]<br/>
+example: help cd<br/>

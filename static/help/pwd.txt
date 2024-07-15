@@ -1,1 +1,2 @@
 pwd - shows the working directory<br/>
+usage: pwd<br/>

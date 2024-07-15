@@ -1,3 +1,4 @@
 rm - deletes a file or directory<br/>
 -r: delete directories and their contents recursively<br/>
-Example: rm -r /path/to/directory<br/>
+usage: rm [options] file <br/>
+example: rm -r /path/to/directory<br/>
