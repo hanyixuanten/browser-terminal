@@ -20,7 +20,7 @@ function rm($commands)
         } else {
             file_put_contents("recent.txt", "Not a directory.<br/>", FILE_APPEND);
         }
-    } else {
+    } else if (sizeof($commands) == 2) {
         if (is_dir("fileroot" . $pwd . "/" . $commands[1])) {
             file_put_contents("recent.txt", "Is a directory.<br/>Try rm -r<br/>", FILE_APPEND);
         } else {
@@ -30,6 +30,7 @@ function rm($commands)
                 file_put_contents("recent.txt", "Error deleting.<br/>", FILE_APPEND);
             }
         }
+    } else {
+        file_put_contents("recent.txt", "Invalid number of arguments.<br/>", FILE_APPEND);
     }
 }
-?>

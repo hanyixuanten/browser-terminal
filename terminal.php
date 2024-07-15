@@ -40,33 +40,24 @@ if (!opendir("fileroot")) {
         echo "<script>window.scrollTo(0,document.body.scrollHeight)</script>";
         exit(0);
     }
-    if ($commands[0] == "pwd" & sizeof($commands) == 1) {
-        file_put_contents("recent.txt", $pwd . "<br/>", FILE_APPEND);
-    } else if ($commands[0] == "mkdir" && sizeof($commands) == 2) {
-        if (!opendir("fileroot" . $pwd . "/" . $commands[1])) {
-            if (!mkdir("fileroot" . $pwd . "/" . $commands[1])) {
-                file_put_contents("recent.txt", "Error creating directory.No permissions?<br/>", FILE_APPEND);
-            }
-        } else {
-            file_put_contents("recent.txt", "Directory already exists.<br/>", FILE_APPEND);
-        }
+    if ($commands[0] == "pwd") {
+        include "commands/pwd.php";
+        pwd($commands);
+    } else if ($commands[0] == "mkdir") {
+        include "commands/mkdir.php";
+        mdir($commands);
     } else if ($commands[0] == "rm") {
         include "commands/rm.php";
         rm($commands);
-    } else if ($commands[0] == "clear" & sizeof($commands) == 1) {
-        file_put_contents("recent.txt", "");
+    } else if ($commands[0] == "clear") {
+        include "commands/clear.php";
+        clear($commands);
     } else if ($commands[0] == "cd") {
         include "commands/cd.php";
         cd($commands);
     } else if ($commands[0] == "help") {
-        $help = file_get_contents("static/terminal.php/help.txt");
-        if (sizeof($commands) == 1) {
-            file_put_contents("recent.txt", $help, FILE_APPEND);
-        } else if (sizeof($commands) == 2 && file_get_contents("static/help/$commands[1].txt") != NULL) {
-            file_put_contents("recent.txt", file_get_contents("static/help/$commands[1].txt"), FILE_APPEND);
-        } else {
-            file_put_contents("recent.txt", "Unknown command.<br/>", FILE_APPEND);
-        }
+        include "commands/help.php";
+        help($commands);
     } else {
         file_put_contents("recent.txt", "Unknown command.<br/>try 'help' or 'help [command]'<br/>", FILE_APPEND);
     }

@@ -1,8 +1,8 @@
 <?php
 function cd($commands)
 {
-    if(sizeof($commands)>2){
-        file_put_contents("recent.txt", "Too many arguments.<br/>", FILE_APPEND);
+    if (sizeof($commands) > 2) {
+        file_put_contents("recent.txt", "Invalid number of arguments.<br/>", FILE_APPEND);
         return;
     }
     $pwd = file_get_contents("pwd.txt");
@@ -23,4 +23,3 @@ function cd($commands)
         }
     }
 }
-?>
