@@ -58,6 +58,9 @@ if (!opendir("fileroot")) {
     } else if ($commands[0] == "help") {
         include "commands/help.php";
         help($commands);
+    } else if ($commands[0] == "touch") {
+        include "commands/touch.php";
+        touc($commands);
     } else {
         file_put_contents("recent.txt", "Unknown command.<br/>try 'help' or 'help [command]'<br/>", FILE_APPEND);
     }
