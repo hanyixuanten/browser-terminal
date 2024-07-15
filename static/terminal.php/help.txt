@@ -1,7 +1,7 @@
-clear - clears the screen<br/>
-pwd - shows the working directory<br/>
-mkdir - creates a new directory<br/>
 cd - changes the working directory<br/>
-rm - deletes a file or directory<br/>
+clear - clears the screen<br/>
 help - displays this help message<br/>
+mkdir - creates a new directory<br/>
+pwd - shows the working directory<br/>
+rm - deletes a file or directory<br/>
 type help [command] to show more details<br/>
