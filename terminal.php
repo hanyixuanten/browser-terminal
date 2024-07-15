@@ -50,25 +50,14 @@ if (!opendir("fileroot")) {
         } else {
             file_put_contents("recent.txt", "Directory already exists.<br/>", FILE_APPEND);
         }
+    } else if ($commands[0] == "rm") {
+        include "commands/rm.php";
+        rm($commands);
     } else if ($commands[0] == "clear" & sizeof($commands) == 1) {
         file_put_contents("recent.txt", "");
     } else if ($commands[0] == "cd") {
-        if ($commands[1] == ".." || sizeof($commands) == 1) {
-            $pwd = substr($pwd, 0, strrpos($pwd, "/"));
-            file_put_contents("pwd.txt", $pwd);
-        } else if (str_starts_with($commands[1], "/")) {
-            file_put_contents("pwd.txt", $commands[1]);
-        } else {
-            if (opendir("fileroot" . $pwd . "/" . $commands[1])) {
-                if ($pwd == "/")
-                    file_put_contents("pwd.txt", $pwd . $commands[1]);
-                else {
-                    file_put_contents("pwd.txt", $pwd . "/" . $commands[1]);
-                }
-            } else {
-                file_put_contents("recent.txt", "Directory does not exist.<br/>", FILE_APPEND);
-            }
-        }
+        include "commands/cd.php";
+        cd($commands);
     } else if ($commands[0] == "help") {
         $help = file_get_contents("static/terminal.php/help.txt");
         if (sizeof($commands) == 1) {
@@ -79,7 +68,7 @@ if (!opendir("fileroot")) {
             file_put_contents("recent.txt", "Unknown command.<br/>", FILE_APPEND);
         }
     } else {
-        file_put_contents("recent.txt", "Unknown command.<br/>", FILE_APPEND);
+        file_put_contents("recent.txt", "Unknown command.<br/>try 'help' or 'help [command]'<br/>", FILE_APPEND);
     }
     echo "<script>window.location.href=\"terminal.php\";</script>";
     ?>
