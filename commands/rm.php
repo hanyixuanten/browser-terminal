@@ -7,7 +7,7 @@ function deleteDirectory($dir)
     }
     return rmdir($dir);
 }
-function rm($commands)
+function func($commands)
 {
     $pwd = file_get_contents("pwd.txt");
     if ($commands[1] == "-r") {

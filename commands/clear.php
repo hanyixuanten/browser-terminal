@@ -1,5 +1,5 @@
 <?php
-function clear($commands)
+function func($commands)
 {
     if (sizeof($commands) == 1) {
         file_put_contents("recent.txt", "");

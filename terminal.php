@@ -40,37 +40,14 @@ if (!opendir("fileroot")) {
         echo "<script>window.scrollTo(0,document.body.scrollHeight)</script>";
         exit(0);
     }
-    if ($commands[0] == "pwd") {
-        include "commands/pwd.php";
-        pwd($commands);
-    } else if ($commands[0] == "mkdir") {
-        include "commands/mkdir.php";
-        mdir($commands);
-    } else if ($commands[0] == "rm") {
-        include "commands/rm.php";
-        rm($commands);
-    } else if ($commands[0] == "clear") {
-        include "commands/clear.php";
-        clear($commands);
-    } else if ($commands[0] == "cd") {
-        include "commands/cd.php";
-        cd($commands);
-    } else if ($commands[0] == "help") {
-        include "commands/help.php";
-        help($commands);
-    } else if ($commands[0] == "touch") {
-        include "commands/touch.php";
-        touc($commands);
-    } else if ($commands[0] == "cat") {
-        include "commands/cat.php";
-        cat($commands);
-    } else if ($commands[0] == "ls") {
-        include "commands/ls.php";
-        ls($commands);
-    } else {
+    if(file_get_contents("commands/$commands[0].php") != NULL){
+        include "commands/$commands[0].php";
+        func($commands);
+    }
+    else{
         file_put_contents("recent.txt", "Unknown command.<br/>try 'help' or 'help [command]'<br/>", FILE_APPEND);
     }
-    echo "<script>window.location.href=\"terminal.php\";</script>";
+    echo "<script>window.location.href=\"terminal.php\";</script>"; 
     ?>
 </body>
 

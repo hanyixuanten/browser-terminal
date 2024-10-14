@@ -1,5 +1,5 @@
 <?php
-function touc($commands)
+function func($commands)
 {
     $pwd = file_get_contents("pwd.txt");
     if (sizeof($commands) == 2) {

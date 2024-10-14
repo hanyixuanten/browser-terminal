@@ -1,5 +1,5 @@
 <?php
-function help($commands)
+function func($commands)
 {
     $help = file_get_contents("static/terminal.php/help.txt");
     if (sizeof($commands) == 1) {
