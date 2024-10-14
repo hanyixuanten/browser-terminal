@@ -1,7 +1,7 @@
 <?php
 function func($commands)
 {
-    $now_v = "v1.5";
+    $now_v = "v1.5.1";
     if (sizeof($commands) == 1) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/hanyixuanten/browser-terminal/releases/latest');
