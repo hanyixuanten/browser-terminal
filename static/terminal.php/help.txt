@@ -2,6 +2,7 @@ cat - displays the contents of a file<br/>
 cd - changes the working directory<br/>
 clear - clears the screen<br/>
 help - displays this help message<br/>
+ls - lists the contents of a directory<br/>
 mkdir - creates a new directory<br/>
 pwd - shows the working directory<br/>
 rm - deletes a file or directory<br/>

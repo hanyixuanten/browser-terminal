@@ -64,6 +64,9 @@ if (!opendir("fileroot")) {
     } else if ($commands[0] == "cat") {
         include "commands/cat.php";
         cat($commands);
+    } else if ($commands[0] == "ls") {
+        include "commands/ls.php";
+        ls($commands);
     } else {
         file_put_contents("recent.txt", "Unknown command.<br/>try 'help' or 'help [command]'<br/>", FILE_APPEND);
     }

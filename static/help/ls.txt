@@ -1,0 +1,2 @@
+ls - lists the contents of a directory<br/>
+usage: ls<br/>
