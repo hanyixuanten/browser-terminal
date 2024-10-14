@@ -2,11 +2,11 @@
 
 ## browser terminal
 
-![php8+](https://img.shields.io/badge/PHP-any_version-green) [![license](https://img.shields.io/badge/license-Apache-blue)](https://github.com/hanyixuanten/browser-terminal/blob/main/LICENSE) ![platform](https://img.shields.io/badge/platform-android|ios|windows|macos|linux-lightgrey.svg)
+![php](https://img.shields.io/badge/PHP-any_version-green) [![license](https://img.shields.io/badge/license-Apache-blue)](https://github.com/hanyixuanten/browser-terminal/blob/main/LICENSE) ![platform](https://img.shields.io/badge/platform-android|ios|windows|macos|linux-lightgrey.svg)
 
 ### Introduction
 
-This is a **web terminal** based on php.It is **not** a terminal for the server or a ssh terminal, but a 'terminal' for the browser.
+This is a **web terminal** based on php. It is **not** a terminal for the server or a ssh terminal, but a 'terminal' for the browser.
 
 It can be used to run some simple commands, such as ls, cat, mkdir, rm etc. It is suitable for small projects or personal use.
 
@@ -19,7 +19,7 @@ Visit [command.md](https://github.com/hanyixuanten/browser-terminal/blob/main/co
 ### install method
 
 1. Environment: nginx or apache with php
-2. Download the latest release from [this page](https://github.com/hanyixuanten/indexpage/releases)
+2. Download the latest release from [this page](https://github.com/hanyixuanten/browser-terminal/releases)
 3. Extract the zip file and put it in the root directory of your web server
 4. Open the browser and enter the address of your web server, you can see the terminal interface
 

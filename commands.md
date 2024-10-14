@@ -4,6 +4,7 @@
 - cd - changes the working directory
 - clear - clears the screen
 - help - displays this help message
+- ls - lists the contents of a directory
 - mkdir - creates a new directory
 - pwd - shows the working directory
 - rm - deletes a file or directory
