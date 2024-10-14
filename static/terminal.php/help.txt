@@ -7,4 +7,5 @@ mkdir - creates a new directory<br/>
 pwd - shows the working directory<br/>
 rm - deletes a file or directory<br/>
 touch - creates a new file<br/>
+update - looks for updates<br/>
 type help [command] to show more details<br/>

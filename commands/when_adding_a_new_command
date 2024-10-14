@@ -1,3 +1,5 @@
 write php
 write help.txt <command_name>.txt
 edit commands.md
+
+if new version: edit new_v in update.php
